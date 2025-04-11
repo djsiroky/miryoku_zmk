@@ -61,10 +61,6 @@ on:
         description: 'branches'
         required: false
         default: 'default'
-      modules:
-        description: 'modules'
-        required: false
-        default: 'default'
       zmk_studio:
         type:  boolean
         default:  false
