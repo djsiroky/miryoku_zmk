@@ -44,9 +44,6 @@ on:
       modules:
         type: string
         default: '["default"]'
-      zmk_studio:
-        type:  boolean
-        default:  false
 
         
 jobs:
@@ -314,12 +311,9 @@ jobs:
             #west_debug='-v'
             #west_build_debug='-t rom_report -t ram_report'
           fi
-          
-          if [ "$github.event.inputs.zmk_studio" = 'true' ]
-          then
-            #zmk_studio_snippet='-S studio-rpc-usb-uart'
-            #zmk_studio_flag='-DCONFIG_ZMK_STUDIO=y'
-          fi
+         
+          #zmk_studio_snippet='-S studio-rpc-usb-uart'
+          #zmk_studio_flag='-DCONFIG_ZMK_STUDIO=y'
 
           echo "::group::setup"
           cd "${GITHUB_WORKSPACE}/zmk"
