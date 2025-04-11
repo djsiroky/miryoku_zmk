@@ -315,7 +315,7 @@ jobs:
             #west_build_debug='-t rom_report -t ram_report'
           fi
           
-          if [ "$github.event.inputs.zmk_studio" == 'true' ]
+          if [ "$github.event.inputs.zmk_studio" = 'true' ]
           then
             #zmk_studio_snippet='-S studio-rpc-usb-uart'
             #zmk_studio_flag='-DCONFIG_ZMK_STUDIO=y'
