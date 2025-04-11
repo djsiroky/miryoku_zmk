@@ -65,6 +65,10 @@ on:
         description: 'modules'
         required: false
         default: 'default'
+      zmk_studio:
+        type:  boolean
+        default:  false
+        
 jobs:
   process-inputs:
     runs-on: ubuntu-latest
