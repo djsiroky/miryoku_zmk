@@ -44,8 +44,11 @@ on:
       modules:
         type: string
         default: '["default"]'
-  
+      zmk_studio:
+        type:  boolean
+        default:  false
 
+        
 jobs:
   main:
     runs-on: ubuntu-latest
@@ -311,6 +314,12 @@ jobs:
             #west_debug='-v'
             #west_build_debug='-t rom_report -t ram_report'
           fi
+          
+          if [ "$github.event.inputs.zmk_studio" == 'true' ]
+          then
+            #zmk_studio_snippet='-S studio-rpc-usb-uart'
+            #zmk_studio_flag='-DCONFIG_ZMK_STUDIO=y'
+          fi
 
           echo "::group::setup"
           cd "${GITHUB_WORKSPACE}/zmk"
@@ -326,7 +335,7 @@ jobs:
           EX_DATAERR='65'
           cd "${GITHUB_WORKSPACE}/zmk/app"
           {
-            west $west_debug build -b ${{ matrix.board }} $west_build_debug -- ${{ steps.main.outputs.shield_arg }} ${{ steps.main.outputs.modules_arg }} -DZMK_CONFIG="${GITHUB_WORKSPACE}/miryoku_zmk/config" ||
+            west $west_debug build -b ${{ matrix.board }} $zmk_studio $west_build_debug -- ${{ steps.main.outputs.shield_arg }} ${{ steps.main.outputs.modules_arg }} -DZMK_CONFIG="${GITHUB_WORKSPACE}/miryoku_zmk/config"  $zmk_studio_flag ||
             echo "$build_failed_message $?." ;
           } 2>&1 | tee "$log"
           if grep -q 'Invalid BOARD; see above.' "$log"
