@@ -1,7 +1,3 @@
-#define HM_TAPPING_TERM 180
-#define HM_QUICK_TAP 240
-#define HM_PRIOR_IDLE 100
-
 / {
   behaviors {
     u_hrm_l: u_hrm_l {
