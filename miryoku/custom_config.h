@@ -1,7 +1,7 @@
 // Copyright 2021 Manna Harbour
 // https://github.com/manna-harbour/miryoku
 
-#define MIRYOKU_LAYER_BASE \
+#define MIRYOKU_LAYER_BASE_DEFAULT \
 &kp Q,             &kp W,             &kp E,             &kp R,           &kp T,               &kp Y,             &kp U,             &kp I,             &kp O,             &kp P,             \
 U_MT(LGUI, A),     U_MT(LALT, S),     U_MT(LCTRL, D),    U_MT(LSHFT, F),  &kp G,               &kp H,             U_MT(LSHFT, J),    U_MT(LCTRL, K),    U_MT(LALT, L),     U_MT(LGUI, SQT),   \
 U_LT(U_BUTTON, Z), U_MT(RALT, X),     &kp C,             &kp V,           &kp B,               &kp N,             &kp M,             &kp COMMA,         U_MT(RALT, DOT),   U_LT(U_BUTTON, SLASH),\
@@ -25,6 +25,8 @@ U_NP,              U_NP,              U_NA,              U_NA,              U_NA
 &kp F10,           &kp F1,            &kp F2,            &kp F3,            &kp PAUSE_BREAK,     U_NA,              &u_to_U_FUN,       &u_to_U_MEDIA,     &kp RALT,          U_NA,              \
 U_NP,              U_NP,              &kp K_APP,         &kp TAB,           &kp SPACE,           U_NA,              U_NA,              U_NA,              U_NP,              U_NP
 
-if defined (MIRYOKU_TIMELESS_HRM)
+#if defined (MIRYOKU_TIMELESS_HRM)
   #define MIRYOKU_LAYER_BASE MIRYOKU_LAYER_BASE_HRM
+#else
+  #define MIRYOKU_LAYER_BASE MIRYOKU_LAYER_BASE_DEFAULT
 #endif
