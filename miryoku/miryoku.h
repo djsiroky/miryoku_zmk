@@ -42,3 +42,7 @@
 #else
   #include "miryoku_behaviors.h"
 #endif
+
+#if defined (MIRYOKU_TIMELESS_HRM)
+  #include "miryoku_timeless_hrm.dtsi"
+#endif

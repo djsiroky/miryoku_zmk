@@ -12,4 +12,4 @@ jobs:
       shield: '["lily58_left","lily58_right"]'
       alphas: '["QWERTY"]'
       nav: '["vi"]'
-      custom_config: '["#define MIRYOKU_TAP_QWERTY\n#define MIRYOKU_EXTRA_QWERTY"]' 
+      custom_config: '["#define MIRYOKU_TAP_QWERTY\n#define MIRYOKU_EXTRA_QWERTY\n#define MIRYOKU_TIMELESS_HRM"]' 
