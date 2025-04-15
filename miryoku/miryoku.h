@@ -44,5 +44,5 @@
 #endif
 
 #if defined (MIRYOKU_TIMELESS_HRM)
-  #include "miryoku_timeless_hrm.dtsi"
+  #include "miryoku_timeless_hrm.h"
 #endif
